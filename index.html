@@ -109,13 +109,12 @@
       var timeDifference = alarmTime.getTime() - currentTime.getTime();
 
       if (timeDifference > 0) {
-        timeoutId = setTimeout(function() {
+        timeoutId =setTimeout(function() {
           var alarmSound = document.getElementById('alarmSound');
           alarmSound.play();
-            setTimeout(function() {
-            alert('Wake up!');
-            location.reload();
-          }, timeDifference);
+          alert('Wake up!');
+          location.reload();
+        }, timeDifference);
 
         document.getElementById('status').innerText = 'Alarm is set.';
       } else {
