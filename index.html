@@ -89,6 +89,10 @@
     <input type="time" id="alarmTime" />
     <button onclick="setAlarm()">Set Alarm</button>
     <p id="status"></p>
+     <audio id="alarmSound">
+      <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mp3">
+      Your browser does not support the audio element.
+    </audio>
   </div>
   <script>
     var timeoutId;
@@ -106,6 +110,8 @@
 
       if (timeDifference > 0) {
         timeoutId = setTimeout(function() {
+          var alarmSound = document.getElementById('alarmSound');
+          alarmSound.play();
           alert('Wake up!');
           location.reload();
         }, timeDifference);
