@@ -158,6 +158,8 @@
       alarmSound.currentTime = 0;
       var popup = document.getElementById('popup');
       popup.style.display = 'none';
+       document.getElementById('alarmTime').value = '';
+      document.getElementById('status').innerText = '';
       clearTimeout(timeoutId);
     }
   </script>
